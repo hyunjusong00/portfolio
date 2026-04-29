@@ -10,7 +10,7 @@ import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
 import { allPosts } from "content-collections";
-import Typewriter from "@/components/typewriter";
+import PaintReveal from "@/components/paint-reveal";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -56,11 +56,11 @@ export default function Page() {
                 yOffset={12}
                 text="I'm HyunJu (Elle) Song"
               />
-              <Typewriter
+              <PaintReveal
                 text="product & brand builder"
-                speed={55}
-                startDelay={1400}
-                className="font-[family-name:var(--font-caveat)] font-medium tracking-tight text-pink-300 mt-3 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
+                delay={1400}
+                duration={1.4}
+                className="font-[family-name:var(--font-caveat)] font-medium tracking-tight text-orange-300 mt-3 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY * 3}>
