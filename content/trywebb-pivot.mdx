@@ -1,33 +1,75 @@
 ---
-title: "Why Trywebb Pivoted From Pricing to Multi-Idea Validation"
-publishedAt: "2026-04-24"
-updatedAt: "2026-04-24"
+title: "From Everytime to VCs: How Trywebb Found Its Real Market"
+publishedAt: "2026-04-29"
+updatedAt: "2026-04-29"
 author: "Hyunju Song"
-summary: "We started Trywebb as a pricing validation tool. Here's what we learned that made us reframe the entire product around multi-idea comparison."
+summary: "I started Trywebb to fix a pain I felt as a Software Engineering student. The market told me I was building for the wrong people. The pivot to founders and VCs taught me a PM's job isn't to defend the original idea — it's to keep asking who this is actually for."
 ---
 
-> Draft — replace this blockquote with a one-paragraph hook about the moment the pivot felt obvious.
+When I first pitched the idea that became Trywebb, I was building for myself.
 
-## The original premise
+I'm a Software Engineering double major. I'd watched at least a dozen classmates pour months into web apps and side projects with nowhere real to take them. Korea has Everytime — the campus platform every student uses — but it wasn't built for this. You could promote a service. You couldn't get real feedback from people who understood what you were building.
 
-- What Trywebb looked like before the pivot
-- Who we thought the user was
-- The core question we were trying to answer for them
+So my first version of Trywebb was simple: a platform where Software students could share their projects and get feedback from peers who *got it*.
 
-## The signal we were ignoring
+I was wrong about the market.
 
-- What founders actually did with the tool
-- The pattern that kept showing up in our user conversations
-- Why pricing was the *symptom*, not the question
+## Where the idea broke
 
-## Reframing the product
+Three problems showed up fast.
 
-- What "multi-idea comparison" means in practice
-- Why this reframe makes the founder's real decision visible
-- What had to change in the UI, the agents, and the pricing model
+**Retention.** Of the first 30 students who signed up, four came back after week one. People posted once, got two or three comments, and disappeared. The product had no reason to bring them back.
 
-## Lessons for future pivots
+**Cold start.** A peer-feedback platform needs critical mass on day one — enough builders posting and enough reviewers reading to make either side worth showing up for. We didn't have it, and we didn't have a path to it.
 
-- The hardest part wasn't the build — it was letting go of the original frame
-- How we decided we had enough signal to pivot vs. iterate
-- What I'd watch for earlier next time
+**One-sided signal.** Even when feedback came, the quality varied wildly. The most common comment we got was "nice UI." Students reviewing students isn't the same as someone who's actually built and shipped. The signal was thin.
+
+I'd designed for a pain point I felt personally. I hadn't designed for a market that could sustain itself.
+
+## The pivot: from peers to investors
+
+The fix wasn't building harder. It was rethinking who was on the other side of the platform.
+
+What student builders actually need isn't more peer comments — it's someone with real stakes. Someone who can validate the idea and fund it if it works. And what early-stage VCs are missing is a clean signal layer for builders who haven't fully formed yet — raw talent without a deck, without traction, without a warm intro.
+
+So Trywebb pivoted to a two-sided market: founders and VCs.
+
+Founders show their idea and capability *before* everything is polished. VCs get early access to talent that hasn't been packaged yet. Both sides have skin in the game, which solves the retention problem the original platform couldn't.
+
+This wasn't an abstract pivot for me. The Kookmin Global PBL Program I'm currently in has the same shape — we're expected to take an idea, ship a product, and pitch it to actual VCs by August. I was building Trywebb from inside the exact pain point Trywebb was trying to solve.
+
+## Why I built the frontend myself
+
+We were a team of four: one developer, two marketers, and me as PM.
+
+I could have stayed in pure PM mode — write specs, hand them off, let the developer execute. I made a different call: I'd translate the design into code myself.
+
+The reason was practical. To talk to a developer, I needed to *show*, not describe. A spec document can be misread ten different ways. A working component can't.
+
+So I learned Git, picked up the frontend stack, and started shipping the UI alongside the developer instead of throwing it over the wall. It changed how we worked together — fewer "wait, that's not what I meant" moments, faster iteration, a developer who trusted that when I asked for something, I knew what it would cost.
+
+It also changed how I made product decisions. Once you've spent three days implementing something yourself, you stop adding features casually. You start asking *is this worth three days of someone's life?* Pure PMs sometimes forget to ask that question.
+
+## From 8 agents to 6
+
+The same instinct — *what's actually worth building* — led to one of the biggest product decisions on Trywebb.
+
+The original analysis system had 8 agents, each evaluating a startup idea from a different angle. It felt thorough. It also felt like the answer to *what would impress a VC?*
+
+So I went and asked them.
+
+I sat down with seven angel investors over six weeks. I went deep into how YC and a16z actually evaluate early-stage ideas — what they look at in the first 90 seconds, what they ignore, what makes them open the second email. The picture that came back was different from what we'd built.
+
+Two of our agents were covering ground other agents already touched. One was redundant with the synthesizer layer. A few were slightly off-axis — measuring things VCs didn't actually weigh heavily at this stage.
+
+So we cut to 6 agents, each with a sharper, distinct lens. Less surface area. More signal.
+
+It would have been easy to keep 8. More always feels safer when you don't know who you're building for. But once we knew what VCs actually used to make decisions, the answer was obvious — and that's the whole point of talking to the people on the other side of your market.
+
+## What I'm learning
+
+The biggest shift in my thinking: a PM's job isn't to defend the original idea. It's to keep asking *who is this actually for, and what makes them stay.*
+
+I wanted to build for students like me. The market told me to build something neither side could leave. I wanted to build a thorough analysis system. The investors told me a sharper one was more useful.
+
+I'm still learning the difference between a problem worth solving and a market worth serving. Trywebb is teaching me both — and the frontend I'm shipping every week reminds me, in commit-by-commit detail, that every product decision has a cost.
