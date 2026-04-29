@@ -1,0 +1,61 @@
+---
+title: "AI Pet Insurance Platform"
+dates: "2023 · 2nd Place"
+role: "Co-Planner & Concept Designer"
+summary: "Pet insurance is sold by price, not fit. The first product I tried to fix that with."
+coverImage: "/petinsurance.png"
+liveUrl: "/petinsurance.jpg"
+technologies:
+  - "Service Design"
+  - "AI Recommendation"
+  - "Concept Design"
+  - "Health Data"
+---
+
+## The problem
+
+Pet insurance is one of the few categories where the *cheapest plan* and the *right plan* almost never overlap. A typical Korean pet insurance plan has at least four moving parts — deductible, reimbursement percentage, annual limit, and coverage scope (illness vs. accident vs. wellness). Most first-time owners pick on price, then discover at the first vet bill that the plan they bought doesn't reimburse what they actually needed. The market churn rate at year one is high enough that the structural problem isn't pricing at all. It's matching.
+
+The platforms in 2023 sold pet insurance the same way travel insurance was sold a decade ago — a long form, a price list, and a hope. Nothing on the market modeled the actual variable that mattered: *how this specific pet is going to age and what kind of vet visits that's going to produce.*
+
+We — a two-person team — proposed using **wearable pet health data** as the missing input.
+
+## My role
+
+Co-Planner & Concept Designer on a 2-person team for the 2023 Kookmin MIS × Finance Academic Conference. I co-led the service concept, designed the recommendation architecture, and built the deck and prototype screens for the final pitch. **2nd Place award winner**, my first time presenting product work at a conference.
+
+## Key decisions
+
+### Used wearable data as the input, not the questionnaire
+
+Existing pet insurance signup flows ask the owner what the pet is *like* — breed, age, weight, pre-existing conditions. Most of those answers are either obvious (breed, age) or unreliable (owners over-estimate exercise, under-report symptoms). The signal that actually predicts future vet visits — activity level, sleep quality, recovery patterns — was already being collected by pet wearables (Fi, FitBark, PetPace) but going nowhere downstream.
+
+We designed the platform to ingest wearable data as a continuous input, not a one-time form. The plan match updates as the pet's health profile changes.
+
+### Two-layer recommender, not one model
+
+A single recommender would have either over-weighted the wearable data (penalizing healthy pets with affordable plans they didn't need) or over-weighted breed/age priors (collapsing back to the questionnaire model we were trying to escape). We split the recommendation into two passes:
+
+- **Content-based filtering** mapped pet attributes (breed, age, activity profile from wearable, known conditions) to **plan attributes** (deductible level, coverage scope, reimbursement curve). This produced the *fit* score — does this plan match this pet's actual risk profile?
+- **Collaborative filtering** layered on top, using historical signal from owners with similar pet profiles. This produced the *retention* score — did owners like this end up keeping plans like this, or did they churn at year one?
+
+The final ranking was a weighted blend, with the weights tunable per category (older pets weighted retention higher; younger pets weighted fit higher).
+
+### Designed around the first-signup moment, not renewal
+
+Most insurance UX work assumes the user is comparing competing plans on a marketplace. We assumed the opposite — most pet owners buy insurance once, immediately after adopting, when they have the least information and the highest emotional pressure. The interface had to do *less* than a marketplace, not more. Three plans presented with one explanation each, anchored to *this pet's* risk profile, not the universe of plans available.
+
+## What we shipped
+
+- 16-page service concept proposal with recommender architecture, user flows, and competitor mapping
+- Prototype screens for onboarding (wearable pairing → first match → enrollment)
+- Two-layer recommender model with worked examples for three pet personas (young active dog, older cat with mild kidney issue, healthy small breed senior)
+- 2nd Place at 2023 Kookmin MIS × Finance Academic Conference ([award photo](/petinsurance.jpg))
+
+## What this taught me
+
+That the hardest part of designing a recommender isn't the model — it's deciding what to *recommend against.* We spent more time defining what the system should refuse to suggest (cheap plans that historically churn, plans that look comprehensive but don't reimburse vet specialty visits) than tuning the filtering weights themselves.
+
+That a first-signup interface is a different product than a comparison interface, even when the underlying data is identical. The user's mental state at the decision moment is the design constraint everyone forgets.
+
+That this was the first time I worked on a product where the technical decisions (filtering type, blending weights) and the design decisions (three plans, not ten; one explanation per plan) were the same decisions. That collapse — *what the system does is what the user sees* — is something I've been chasing in product work ever since.

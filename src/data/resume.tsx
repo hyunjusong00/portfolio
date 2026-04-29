@@ -219,7 +219,7 @@ export const DATA = {
     },
     {
       title: "Kookmin University Newspaper Website Redesign",
-      href: "https://bizon.kookmin.ac.kr/bizon/index.do",
+      href: "/projects/newspaper-website",
       dates: "2024",
       active: false,
       description:
@@ -236,7 +236,7 @@ export const DATA = {
     },
     {
       title: "Kookmin University Newspaper Instagram - Reels & Feed Direction",
-      href: "https://instagram.com/kmu_bizon",
+      href: "/projects/newspaper-instagram",
       dates: "2024",
       active: false,
       description:
@@ -254,7 +254,7 @@ export const DATA = {
     },
     {
       title: "AI Pet Insurance Platform",
-      href: "/petinsurance.jpg",
+      href: "/projects/pet-insurance",
       dates: "2023 · 2nd Place",
       active: false,
       description:
