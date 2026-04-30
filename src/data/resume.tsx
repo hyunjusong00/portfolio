@@ -182,6 +182,22 @@ export const DATA = {
       video: "",
     },
     {
+      title: "Kookmin University Newspaper Website Redesign",
+      href: "/projects/newspaper-website",
+      dates: "2024",
+      active: false,
+      description:
+        "Led a full redesign of the Kookmin University Newspaper website as Editor-in-Chief. Restructured information architecture, modernized the visual system, and rebuilt navigation around how readers actually browsed articles. Website traffic grew 40%+ within a semester.",
+      technologies: [
+        "Web Redesign",
+        "Information Architecture",
+        "Editorial Design",
+      ],
+      links: [],
+      image: "/bizon-new.jpg",
+      video: "",
+    },
+    {
       title: "Welfare Link",
       href: "/projects/welfare-link",
       dates: "2025",
@@ -218,23 +234,6 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Kookmin University Newspaper Website Redesign",
-      href: "/projects/newspaper-website",
-      dates: "2024",
-      active: false,
-      description:
-        "Led a full redesign of the Kookmin University Newspaper website as Editor-in-Chief. Restructured information architecture, modernized the visual system, and rebuilt navigation around how readers actually browsed articles. Website traffic grew 40%+ within a semester.",
-      technologies: [
-        "Web Redesign",
-        "Information Architecture",
-        "Editorial Design",
-      ],
-      links: [],
-      image: "/bizon.png",
-      imageFit: "contain" as const,
-      video: "",
-    },
-    {
       title: "Kookmin University Newspaper Instagram - Reels & Feed Direction",
       href: "/projects/newspaper-instagram",
       dates: "2024",
@@ -248,7 +247,7 @@ export const DATA = {
         "Social Media",
       ],
       links: [],
-      image: "/instagram-logo.png",
+      image: "/bizon.png",
       imageFit: "contain" as const,
       video: "",
     },

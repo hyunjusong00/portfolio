@@ -56,7 +56,7 @@ export default async function ProjectCaseStudy({
   }
 
   return (
-    <section id="project">
+    <section id="project" className="max-w-3xl mx-auto">
       <div className="flex justify-start gap-4 items-center">
         <Link
           href="/#projects"
@@ -68,7 +68,7 @@ export default async function ProjectCaseStudy({
         </Link>
       </div>
 
-      <header className="flex flex-col gap-5 max-w-3xl">
+      <header className="flex flex-col gap-5">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
           <span>{project.dates}</span>
           {project.role && <span>· {project.role}</span>}
@@ -119,7 +119,7 @@ export default async function ProjectCaseStudy({
       </div>
 
       {(project.coverVideo || project.coverImage) && (
-        <div className="mb-12 rounded-xl overflow-hidden border border-border">
+        <div className="mb-12 rounded-xl overflow-hidden border border-border bg-muted aspect-video">
           {project.coverVideo ? (
             <video
               src={project.coverVideo}
@@ -128,19 +128,19 @@ export default async function ProjectCaseStudy({
               muted
               playsInline
               controls
-              className="w-full h-auto"
+              className="w-full h-full object-cover"
             />
           ) : (
             <img
               src={project.coverImage}
               alt={project.title}
-              className="w-full h-auto"
+              className="w-full h-full object-cover object-center"
             />
           )}
         </div>
       )}
 
-      <article className="prose max-w-3xl text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
+      <article className="prose max-w-none text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
         <MDXContent code={project.mdx} components={mdxComponents} />
       </article>
     </section>

@@ -10,7 +10,7 @@ import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
 import { allPosts } from "content-collections";
-import PaintReveal from "@/components/paint-reveal";
+import Typewriter from "@/components/typewriter";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -56,11 +56,11 @@ export default function Page() {
                 yOffset={12}
                 text="I'm HyunJu (Elle) Song"
               />
-              <PaintReveal
+              <Typewriter
                 text="product & brand builder"
-                delay={1400}
-                duration={1.4}
-                className="font-[family-name:var(--font-caveat)] font-medium tracking-tight text-orange-300 mt-3 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
+                speed={70}
+                startDelay={1400}
+                className="font-[family-name:var(--font-caveat)] font-medium tracking-tight text-pink-300 mt-3 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl"
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY * 3}>
@@ -116,7 +116,7 @@ export default function Page() {
             <SectionHeading number="01" label="About" />
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <div className="prose max-w-3xl text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
+            <div className="prose max-w-none text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
               <Markdown>{DATA.summary}</Markdown>
             </div>
           </BlurFade>
@@ -234,7 +234,7 @@ export default function Page() {
                 >
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="flex flex-col gap-1 group max-w-3xl"
+                    className="flex flex-col gap-1 group"
                   >
                     <div className="flex items-baseline gap-2">
                       <h3 className="text-lg font-medium tracking-tight group-hover:underline underline-offset-4">
