@@ -44,3 +44,6 @@ next-env.d.ts
 
 # unused source assets
 public/BizOn.HEIC
+public/IMG_*.HEIC
+public/IMG_*.heic
+public/IMG_*.mov

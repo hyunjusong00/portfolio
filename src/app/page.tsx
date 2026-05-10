@@ -30,7 +30,7 @@ export default function Page() {
     .sort((a, b) =>
       new Date(a.publishedAt) > new Date(b.publishedAt) ? -1 : 1
     )
-    .slice(0, 3)
+    .slice(0, 6)
     .map((post) => ({
       slug: post._meta.path.replace(/\.mdx$/, ""),
       title: post.title,
@@ -224,9 +224,18 @@ export default function Page() {
         <section id="writing">
           <div className="flex min-h-0 flex-col gap-y-6">
             <BlurFade delay={BLUR_FADE_DELAY * 14}>
-              <SectionHeading number="07" label="Writing" />
+              <div className="flex items-baseline justify-between gap-4">
+                <SectionHeading number="07" label="Writing" />
+                <Link
+                  href="/blog"
+                  className="group inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  View all writing
+                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              </div>
             </BlurFade>
-            <div className="flex flex-col gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {recentPosts.map((post, id) => (
                 <BlurFade
                   key={post.slug}
@@ -234,21 +243,21 @@ export default function Page() {
                 >
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="flex flex-col gap-1 group"
+                    className="flex flex-col gap-1 group h-full"
                   >
                     <div className="flex items-baseline gap-2">
                       <h3 className="text-lg font-medium tracking-tight group-hover:underline underline-offset-4">
                         {post.title}
                       </h3>
                       <ArrowUpRight
-                        className="h-4 w-4 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
+                        className="h-4 w-4 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 flex-none"
                         aria-hidden
                       />
                     </div>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground line-clamp-3">
                       {post.summary}
                     </p>
-                    <p className="text-xs text-muted-foreground tabular-nums">
+                    <p className="text-xs text-muted-foreground tabular-nums mt-auto pt-2">
                       {post.publishedAt}
                     </p>
                   </Link>
